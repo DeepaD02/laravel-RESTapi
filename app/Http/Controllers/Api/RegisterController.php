@@ -29,4 +29,25 @@ class RegisterController extends Controller
             'data' => $registration,
         ], 201);
     }
+
+    public function index(){
+        $registration = Registration::all();
+
+        return response()->json([
+             'message' => 'Registrations retrieved successfully',
+             'data' => $registration,
+        ],200);
+    }
+
+
+    public function show($id){
+
+    $registration = Registration::find($id);
+
+    return response()->json([
+        'message' => "Registrations retrived successfully",
+        'data' => $registration,
+    ],200);
+
+    }
 }

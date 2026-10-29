@@ -10,3 +10,5 @@ use App\Http\Controllers\Api\RegisterController;
 
 
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/users', [RegisterController::class, 'index']);
+Route::get('/users/{id}', [RegisterController::class, 'show']);
